@@ -1,9 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": [
-      "cypress"
-    ]
+    "types": ["cypress"],
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "h"
   },
-  "files": ["*.cy.*"]
+  "files": ["**/*.cy.tsx", "**/*.cy.ts", "**/*.cy.js", "**/*.cy.jsx", "cypress"]
 }

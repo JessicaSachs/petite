@@ -1,0 +1,61 @@
+{
+  "name": "@petite/lib-vue2",
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./typings/main.d.ts",
+      "script": "./dist/index.umd.js",
+      "require": "./dist/index.cjs.cjs",
+      "import": "./dist/index.es.mjs",
+      "default": "./dist/index.umd.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json",
+    "./src/": "./src/"
+  },
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.es.mjs",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "pnpm cypress open --component --browser=chrome",
+    "test:ci": "run-s test:unit test:component",
+    "test:unit": "pnpm vitest",
+    "test:component": "pnpm cypress run --component --browser=chrome",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "clean": "rimraf dist"
+  },
+  "browserslist": [
+    "IE 11, >3%, last 2 versions"
+  ],
+  "peerDependencies": {
+    "vue": "^2.7"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.4.11",
+    "@vue-bridge/runtime": "^0.1.1",
+    "core-js": "^3.25.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.0.0",
+    "@vitejs/plugin-vue2-jsx": "1.0.3",
+    "@vue-bridge/testing": "0.2.1",
+    "@vue-bridge/vite-plugin": "^0.2.0",
+    "browserslist": "^4.21.3",
+    "vite": "3.1.3",
+    "vue": "2.7.10"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "exclude": ["**/*.cy.*", "**/*.test.*"],
+  "compilerOptions": {
+    "composite": true,
+    "isolatedModules": false,
+    "jsx": "preserve"
+  }
+}

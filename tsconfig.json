@@ -5,6 +5,7 @@
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
     "strict": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxFactory": "h",
@@ -16,12 +17,11 @@
     "strictNullChecks": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [
-      "vite/client"
-    ],
+    "types": ["vite/client"],
     "paths": {
       "~/*": ["src/*"]
     }
   },
+  "vueCompilerOptions": { "target": 2.7 },
   "exclude": ["dist", "node_modules"]
 }

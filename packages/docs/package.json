@@ -1,0 +1,21 @@
+{
+  "name": "@petite/docs",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@7.8.0",
+  "version": "0.0.0",
+  "description": "Documentation for both the Vue 2 and Vue 3 versions of your components.",
+  "author": "Jessica Sachs",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "clean": "rimraf .vitepress/dist"
+  },
+  "dependencies": {
+    "vue": "3.2.39"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.13"
+  }
+}

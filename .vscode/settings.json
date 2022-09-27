@@ -1,0 +1,36 @@
+{
+  "cSpell.words": [
+    "antfu",
+    "demi",
+    "esno",
+    "iconify",
+    "intlify",
+    "jsdelivr",
+    "pinia",
+    "pnpm",
+    "unocss",
+    "unplugin",
+    "Vite",
+    "vitejs",
+    "Vitepress",
+    "Vitesse",
+    "vitest",
+    "vueuse"
+  ],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": true, // required
+  "editor.formatOnType": false, // required
+  "editor.formatOnSave": true, // optional
+  "editor.formatOnSaveMode": "file", // required to format on save
+  "files.autoSave": "onFocusChange", // optional but recommended
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}

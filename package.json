@@ -1,40 +1,67 @@
 {
   "name": "petite",
-  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@7.8.0",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "description": "An opinionated Vue template for libraries that want to support delivering both Vue 2 and Vue 3 components. TypeScript-first, with infrastructure to test, develop, and document your components against multiple versions of Vue.",
+  "repository": "https://github.com/JessicaSachs/petite",
+  "keywords": [
+    "vue",
+    "vue3",
+    "vue2",
+    "vue library",
+    "library template",
+    "monorepo template"
+  ],
+  "type": "module",
   "author": "Jessica Sachs",
-  "license": "ISC",
-  "peerDependencies": {
-    "@vueuse/core": ">8"
+  "license": "MIT",
+  "scripts": {
+    "clean": "pnpm --filter @petite/* clean",
+    "lint": "pnpm lint:code",
+    "lint:code": "pnpm eslint --cache --fix packages/lib-*",
+    "dev:3": "pnpm --filter @petite/lib-vue3 dev",
+    "dev:2": "pnpm --filter @petite/lib-vue2 dev",
+    "dev:docs": "pnpm --filter docs dev",
+    "build": "pnpm --filter @petite/lib-* build",
+    "build:docs": "pnpm --filter @petite/docs build",
+    "postinstall": "esno scripts/symlink packages/lib-vue3/src packages/lib-vue2/src"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.25.2",
-    "@cypress/vue": "4.1.0",
-    "@cypress/vue2": "1.0.2",
-    "@vitejs/plugin-vue-jsx": "2.0.0",
-    "@vitejs/plugin-vue": "^3.0.1",
-    "@vitejs/plugin-vue2": "1.1.2",
-    "@vitejs/plugin-vue2-jsx": "1.0.3",
-    "@vueuse/core": "^9.1.1",
-    "cypress": "^10.4.0",
-    "eslint": "8.22.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "histoire": "^0.10.7",
-    "pnpm": "^7.8.0",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.9",
-    "vitepress": "1.0.0-alpha.10",
-    "vitest": "0.22.1",
-    "vue": "^3.2.37",
-    "vue-demi": "^0.13.9",
-    "vue-template-compiler": "2.7.10",
-    "vue-tsc": "0.40.1",
-    "vue2": "npm:vue@2.7"
+    "@antfu/eslint-config": "0.25.2",
+    "@typescript-eslint/parser": "5.36.2",
+    "@vue-bridge/eslint-config": "0.2.0",
+    "@testing-library/cypress": "8.0.3",
+    "@vue/tsconfig": "0.1.3",
+    "cpy-cli": "4.2.0",
+    "cypress": "10.8.0",
+    "eslint": "8.23.0",
+    "esno": "0.16.3",
+    "lint-staged": "13.0.3",
+    "npm-run-all": "4.1.5",
+    "pkg-types": "^0.3.5",
+    "pnpm": "7.9.3",
+    "prettier": "2.7.1",
+    "rimraf": "3.0.2",
+    "sass": "^1.55.0",
+    "typescript": "4.7.4",
+    "unplugin-vue-components": "0.22.7",
+    "vite": "3.1.3",
+    "vite-plugin-dts": "^1.5.0",
+    "vitest": "0.23.2",
+    "vue-eslint-parser": "9.1.0",
+    "vue-tsc": "0.40.13"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "run-s lint-staged build"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md,vue}": "pnpm lint",
+    "*.{js,css,md,vue}": "prettier --write"
   }
 }

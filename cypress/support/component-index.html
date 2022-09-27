@@ -1,10 +1,21 @@
+<!--
+  Shared HTML setup code.
+  Use this file for things like globally installed deps.
+  If you ever need Vue {2,3}-only HTML setup code, then
+  change the relevant HTML config in the relevant package's
+  cypress.config.ts file.
+
+  Think: fonts, icon fonts. Anything you'd put in index.html.
+  You have access to all of the normal Vite transforms + vars.
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Components App</title>
+    <title>Component Tests</title>
   </head>
   <body>
     <div data-cy-root></div>

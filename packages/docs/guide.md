@@ -1,57 +1,10 @@
-# 🚧 Under Construction 🚧
-
 # Petite ✌️
 
 Petite is an opinionated GitHub template built for Vue component authors. It sets up the tooling required to develop, document, and test **Universal SFC Components** that are backwards-compatible with the Vue 2.7 runtime.
 
 This is accomplished with some runtime helpers and a very opinionated monorepo structure.
 
-Petite sets up Vite, Volar, Linting, Vitepress, TypeScript, and Testing so that you can choose to write Vue 3-style code while easily maintaining backwards compatibility for your Vue 2.x users. 👏👏
-
-## Features
-
-**Build + Compile**
-
-- [x] Vue 2.7 + Vue 3 w/ Script Setup
-- [x] Volar support for Vue 2.7 and Vue 3
-- [x] TypeScript
-  - [x] Ship d.ts files for each source file
-  - [x] Ship global types via `dist/components.d.ts` for your users (via `unplugin-vue-components`)
-- [x] pnpm workspaces + monorepo
-- [x] Vite
-
-**Lint**
-
-- [x] Eslint and prettier
-- [x] Lint pre-commit and on save
-
-**Document**
-
-- [x] Documentation Site via Vitepress
-  - [ ] netlify.toml
-  - [ ] Type-gen documentation (see [Faker's Vitepress config](https://github.com/faker-js/faker/tree/main/docs/.vitepress))
-
-**Test and Run**
-
-- [x] Component Testing via Cypress for headed components
-  - [ ] Fix HMR for Vue 2 (Cypress isn't watching symlinks?)
-- [x] Unit Testing via Vitest for headless components and logic
-- [ ] Stories via Histoire
-  - [ ] netlify.toml
-- [ ] Cypress End-to-end example
-
-**Tooling + README**
-
-- [ ] GitHub integration
-  - [ ] GitHub actions
-  - [ ] Issue templates
-- [ ] Fancy README Badges
-
-**Style**
-
-- [x] SCSS
-- [ ] UnoCSS
-- [ ] CSS-only Icons via Iconify
+Petite sets up [Vite](https://vitejs.dev), Volar, Linting, Vitepress, TypeScript, and Testing so that you can choose to write Vue 3-style code while easily maintaining backwards compatibility for your Vue 2.x users. 👏👏
 
 ## Why Petite?
 
@@ -79,6 +32,8 @@ npx degit JessicaSachs/petite your-project-name
 5. Optionally rename the folders, as well.
 
 ## Development
+
+I recommend you develop in Vue 3, because HMR is less likely to have issues. Periodically use Volar, linting, or Cypress to check that you're not breaking Vue 2.
 
 ```sh
 pnpm dev:3
@@ -209,11 +164,11 @@ At the workspace root...
 
 ## Docs
 
-```sh
-pnpm run docs
-```
+Petite uses [Vitepress](https://vitepress.vuejs.org/) for its documentation. All good libraries have documentation.
 
-All good libraries have documentation. Petite uses Vitepress for its documentation.
+```sh
+pnpm dev:docs
+```
 
 ## Thanks
 
