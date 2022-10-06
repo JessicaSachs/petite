@@ -30,9 +30,9 @@
   "devDependencies": {
     "@antfu/eslint-config": "0.25.2",
     "@iconify-json/carbon": "^1.1.7",
+    "@testing-library/cypress": "8.0.3",
     "@typescript-eslint/parser": "5.36.2",
     "@vue-bridge/eslint-config": "0.2.0",
-    "@testing-library/cypress": "8.0.3",
     "@vue/tsconfig": "0.1.3",
     "cpy-cli": "4.2.0",
     "cypress": "10.8.0",
@@ -65,5 +65,10 @@
   "lint-staged": {
     "*.{js,ts,tsx,md,vue}": "pnpm lint",
     "*.{js,css,md,vue}": "prettier --write"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@unocss/vite@0.45.26": "patches/@unocss__vite@0.45.26.patch"
+    }
   }
 }

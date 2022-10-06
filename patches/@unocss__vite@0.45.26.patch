@@ -1,0 +1,27 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index cd365ec55340ee4133c4b97377266c27d1fff4a9..47ccae372edd18cd28dda8e48197b025c2fbc7bb 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -359,14 +359,14 @@ function GlobalModeBuildPlugin({ uno, ready, extract, tokens, filter, getConfig
+             });
+           }
+         }
+-        if (!replaced) {
+-          let msg = "[unocss] does not found CSS placeholder in the generated chunks";
+-          if (viteConfig.build.lib && checkJs)
+-            msg += "\nIt seems you are building in library mode, it's recommended to set `build.cssCodeSplit` to true.\nSee https://github.com/vitejs/vite/issues/1579";
+-          else
+-            msg += "\nThis is likely an internal bug of unocss vite plugin";
+-          this.error(new Error(msg));
+-        }
++        // if (!replaced) {
++        //   let msg = "[unocss] does not found CSS placeholder in the generated chunks";
++        //   if (viteConfig.build.lib && checkJs)
++        //     msg += "\nIt seems you are building in library mode, it's recommended to set `build.cssCodeSplit` to true.\nSee https://github.com/vitejs/vite/issues/1579";
++        //   else
++        //     msg += "\nThis is likely an internal bug of unocss vite plugin";
++        //   this.error(new Error(msg));
++        // }
+       }
+     }
+   ];

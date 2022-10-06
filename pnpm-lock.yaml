@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@unocss/vite@0.45.26':
+    hash: 6yp66cwfmy7c7qh4d4lkw2wdii
+    path: patches/@unocss__vite@0.45.26.patch
+
 importers:
 
   .:
@@ -1386,7 +1391,7 @@ packages:
     dependencies:
       '@unocss/core': 0.45.26
       '@unocss/reset': 0.45.26
-      '@unocss/vite': 0.45.26_vite@3.1.3
+      '@unocss/vite': 0.45.26_6yp66cwfmy7c7qh4d4lkw2wdii_vite@3.1.3
     transitivePeerDependencies:
       - vite
     dev: true
@@ -1519,7 +1524,7 @@ packages:
       '@unocss/core': 0.45.26
     dev: true
 
-  /@unocss/vite/0.45.26_vite@3.1.3:
+  /@unocss/vite/0.45.26_6yp66cwfmy7c7qh4d4lkw2wdii_vite@3.1.3:
     resolution: {integrity: sha512-9BNJXBN0UG+olMbfIcVcrJgBetyO3HOP6Wx3r5Oc8iwfYSxrWQlHFF+yVJi/+oxsENfsjAgCRH7O+nF4FrXceA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0
@@ -1534,6 +1539,7 @@ packages:
       magic-string: 0.26.4
       vite: 3.1.3_sass@1.55.0
     dev: true
+    patched: true
 
   /@vitejs/plugin-vue-jsx/2.0.1_vite@3.1.3+vue@3.2.39:
     resolution: {integrity: sha512-lmiR1k9+lrF7LMczO0pxtQ8mOn6XeppJDHxnpxkJQpT5SiKz4SKhKdeNstXaTNuR8qZhUo5X0pJlcocn72Y4Jg==}
@@ -6255,7 +6261,7 @@ packages:
       '@unocss/transformer-compile-class': 0.45.26
       '@unocss/transformer-directives': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
-      '@unocss/vite': 0.45.26_vite@3.1.3
+      '@unocss/vite': 0.45.26_6yp66cwfmy7c7qh4d4lkw2wdii_vite@3.1.3
     transitivePeerDependencies:
       - supports-color
       - vite
