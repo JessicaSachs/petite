@@ -29,13 +29,9 @@ const decrement = () => {
 </script>
 
 <template>
-  <div>
-    <button @click="increment">
-      +
-    </button>
-    <button @click="decrement">
-      -
-    </button>
+  <div class="font-sans border-1 rounded m-2 items-center justify-center gap-12px text-gray-800 children:text-2xl text-2xl inline-flex min-w-120px">
+    <button class="i-carbon-add icon-btn" @click="increment" />
     {{ counter }}
+    <button class="i-carbon-subtract icon-btn" @click="decrement" />
   </div>
 </template>

@@ -3,4 +3,4 @@
  * For example: UnoCSS, Percy, Cypress browser-side plugins.
  */
 
-console.log('hello world')
+import 'uno.css'

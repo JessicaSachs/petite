@@ -1,7 +1,7 @@
 import type { Plugin, UserConfig } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import dts from 'vite-plugin-dts'
-
+import Unocss from 'unocss/vite'
 export interface VueBridgeBuildOptions {
   name: string
   outDir?: string
@@ -23,6 +23,7 @@ export const pluginsConfig = (plugins: Plugin[] = []): UserConfig['plugins'] => 
     dirs: ['src/components'],
     dts: true,
   }),
+  Unocss(),
   dts(),
   ...plugins,
 ])
@@ -50,7 +51,7 @@ export const buildConfig = (_options: VueBridgeBuildOptions): UserConfig['build'
 
   return {
     outDir: options.outDir,
-
+    cssCodeSplit: true,
     lib: {
       entry: 'src/main.ts',
       formats: ['es', 'cjs', 'iife'],
