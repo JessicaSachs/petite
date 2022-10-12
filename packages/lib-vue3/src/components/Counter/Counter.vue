@@ -1,30 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const props = withDefaults(defineProps<{
-  max: number
+const props = defineModel<{
+  modelValue: number
   min: number
-}>(), { max: 10, min: 0 })
-
-const emit = defineEmits<{
-  (e: 'change', newValue: number): void
+  max: number
 }>()
 
-const counter = ref(0)
+const modelValue = props.modelValue
 
 const increment = () => {
-  if (counter.value >= props.max)
+  if (modelValue.value >= props.max)
     return
 
-  counter.value++
-  emit('change', counter.value)
+  modelValue.value++
 }
 
 const decrement = () => {
-  if (counter.value <= props.min)
+  if (modelValue.value <= props.min)
     return
-  counter.value--
-  emit('change', counter.value)
+  modelValue.value--
 }
 </script>
 
@@ -36,6 +29,6 @@ const decrement = () => {
     <button @click="decrement">
       -
     </button>
-    {{ counter }}
+    {{ modelValue }}
   </div>
 </template>

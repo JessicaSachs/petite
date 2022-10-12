@@ -23,6 +23,7 @@ export const pluginsConfig = (plugins: Plugin[] = []): UserConfig['plugins'] => 
     dirs: ['src/components'],
     dts: true,
   }),
+
   dts(),
   ...plugins,
 ])

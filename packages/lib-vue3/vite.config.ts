@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import VueMacros from 'unplugin-vue-macros/vite'
+import Vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { vueBridge } from '@vue-bridge/vite-plugin'
 
@@ -12,8 +13,13 @@ const libraryGlobalName = 'Petite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: pluginsConfig([
-    vue(),
-    vueJsx(),
+    // @ts-expect-error Vue Macros doesn't have a name value.
+    VueMacros({
+      plugins: {
+        vue: Vue(),
+        vueJsx: vueJsx(),
+      },
+    }),
     // @ts-expect-error Vue Bridge doesn't have a name value.
     vueBridge({
       vueVersion: '3',

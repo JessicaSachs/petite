@@ -1,9 +1,10 @@
+import { ref } from 'vue'
 import Counter from './Counter.vue'
 
 describe('<Counter />', () => {
   it('renders', () => {
     // see: https://test-utils.vuejs.org/guide/
-
-    cy.mount(() => <Counter max={10} min={-1}></Counter>).get('button').first().click().click()
+    const myCounter = ref(0)
+    cy.mount(() => <div>{ myCounter.value }<Counter max={3} min={-1} modelValue={myCounter}></Counter></div>)
   })
 })
